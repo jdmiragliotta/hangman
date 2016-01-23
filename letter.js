@@ -2,14 +2,13 @@ function Letter(let){
   this.charac = let,
   this.appear = false,
   this.letterRender = function(){
-    if (appear === false){
+    if (this.appear === false){
       return "_";
     }else{
-      return charac;
+      return this.charac;
     }
   }
 };
 
-letterRender();
 
 module.exports = Letter;
