@@ -2,13 +2,13 @@ function Letter(let){
   this.charac = let,
   this.appear = false,
   this.letterRender = function(){
-    if (this.appear === false){
+    if (appear === false){
       return "_";
     }else{
-      return this.charac;
+      return charac;
     }
   }
-}
+};
 
 letterRender();
 
