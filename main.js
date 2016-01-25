@@ -3,16 +3,15 @@ prompt.start();
 var Word = require("./word.js");
 
 var game = {
-  wordBank :["array", "boolean", "string", "function", "error", "object", "conditional", "comments", "console"],
+  wordBank : ["array", "boolean", "string", "function", "error", "object", "conditional", "comments", "console"],
   guessesRemaining : 10,
   currentWrd : null,
-  startGame : function(){
-    num = Math.floor(Math.random() * (9 - 1) + 1)
-    var word = new Word(this.wordBank[num]);
+  startGame : function(wrd){
+    var word = new Word(this.wordBank[Math.floor(Math.random()*this.wordBank.length)]);
     this.currentWrd = word;
     this.currentWrd.getLets();
     this.keepPromptingUser();
-  },
+    },//End of startGame Function
   keepPromptingUser : function(){
     var self = this;
     prompt.get(["guessLetter"], function(err, result){
